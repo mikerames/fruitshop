@@ -5,8 +5,8 @@
             padding: 10px;
         }
 
-        .main-window input {
-            width: 75%;
+        .main-window p {
+            text-align: center;
         }
 
         .row {
@@ -27,7 +27,18 @@
             display: table;
             clear: both;
         }
+        
+        .description {
+            color: red;
+        }
 
+        .fruitlist {
+            display: flex;
+            flex-flow: row wrap;
+            width: 400px;
+        }
+
+        
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 
         @media (max-width: 600px) {
