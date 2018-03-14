@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Content Type Meta tag -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--Responsive Viewport Meta tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>FruitShop</title>
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -11,13 +14,15 @@
 <body>
     <!-- page content -->
     <div class="main-window">
-        <p>Welcome to the FruitShop! <br> Click on the fruit you want! </p>
+        <p>Welcome to the FruitShop!
+            <br> Click on the fruit you want! </p>
         <div class="row">
             <div class="column">
                 <div class="fruitlist" id="fruitlist"></div>
             </div>
             <div class="column">
                 <div class="cart" id="cart"></div>
+                <div class="total" id="total"></div>
             </div>
         </div>
     </div>

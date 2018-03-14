@@ -32,17 +32,28 @@
             color: red;
         }
 
+        svg {
+            width: 200px;
+        }
+
         .fruitlist {
             display: flex;
             flex-flow: row wrap;
             width: 400px;
         }
 
+/*         .cart {
+
+        }
+ */
+        .itemDetails {
+            margin: 10px;
+        }
         
         /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 
         @media (max-width: 600px) {
-            .column {
-                width: 100%;
-            }
+        .column {
+            width: 100%;
+        }
         }
