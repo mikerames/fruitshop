@@ -1,0 +1,80 @@
+/* SCSS Variables */
+$gen-font: 'Poppins', sans-serif;
+$txt-red: red;
+
+
+.main-window {
+  padding: 10px;
+}
+
+.main-window h1 {
+  text-align: center;
+
+}
+
+.main-window p {
+  text-align: center;
+  font-family: $gen-font;
+}
+
+.main-window span {
+  color: $txt-red;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fruit {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.description {
+  color: $txt-red;
+}
+
+svg {
+  width: 150px;
+  height: 120px
+}
+
+.fruitlist {
+  display: flex;
+  flex-flow: row wrap;
+  width: 400px;
+}
+
+/*         .cart {
+
+}
+*/
+.itemDetails {
+  margin: 10px;
+}
+
+.total {
+  margin: 10px;
+  float: left;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column .fruitlist {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
