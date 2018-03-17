@@ -2,7 +2,7 @@
 let list = document.getElementById('fruitlist');
 let total = 0;
 let totalCost;
-let data = (localStorage.getItem('todoList')) ? JSON.parse(localStorage.getItem('todoList')) : {
+let data = { 
     cart: []
 };
 
@@ -94,17 +94,17 @@ function addToCart(e) {
      // quantity section 4
     const qty = document.createElement('div');
     qty.classList.add('quantity');
-    const btnPlus = document.createElement('button');
-    btnPlus.classList.add('btn-plus');
-    btnPlus.innerText = 'add';
+    const btnMinus = document.createElement('button');
+    btnMinus.classList.add('btn-minus');
+    btnMinus.innerText = 'rem';
     const qtyValue = document.createElement('input');
     qtyValue.setAttribute('id', 'inputqty' + fruits[fruitIdx].fruit);
     qtyValue.setAttribute('type', 'text');
     qtyValue.setAttribute('name', 'name');
     qtyValue.setAttribute('value', '1');
-    const btnMinus = document.createElement('button');
-    btnMinus.classList.add('btn-minus');
-    btnMinus.innerText = 'rem';
+    const btnPlus = document.createElement('button');
+    btnPlus.classList.add('btn-plus');
+    btnPlus.innerText = 'add';
 
     // price section 5
     const divPrice = document.createElement('div');
@@ -112,19 +112,21 @@ function addToCart(e) {
     divPrice.setAttribute('id', 'price' + fruits[fruitIdx].fruit);
     divPrice.innerText = 'Price: ' + fruits[fruitIdx].price;
 
+
+
     // main section per fruit on cart 
     // that appends all previous sections and
     // isolated elements (qty section)  
     const itemDetails = document.createElement('div');
     itemDetails.classList.add('itemDetails');
-    itemDetails.setAttribute('id', 'itemDetails');
+    itemDetails.setAttribute('id', 'itemDetails' + fruit);
     itemDetails.appendChild(divFruit);
     itemDetails.appendChild(divDescription);
     itemDetails.appendChild(divLocation);
     itemDetails.appendChild(qty);
-    itemDetails.appendChild(btnPlus);
-    itemDetails.appendChild(qtyValue);
     itemDetails.appendChild(btnMinus);
+    itemDetails.appendChild(qtyValue);
+    itemDetails.appendChild(btnPlus);
     itemDetails.appendChild(divPrice);
 
     // cart is related to right column that only appears
