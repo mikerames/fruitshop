@@ -201,6 +201,8 @@ function btnQty(e) {
     } else if (btnQty === 'btn-rem') {
         let elem = document.getElementById(itemDetId);
         elem.parentNode.removeChild(elem);
+        //remove from temp array to
+        data.cart.splice(data.cart.indexOf(fruit), 1);                
     }
 
     // always update current total with the previous cost
