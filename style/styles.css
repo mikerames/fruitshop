@@ -22,7 +22,7 @@
 
 /* Create two equal columns that floats next to each other */
 .column {
-  width: 50%;
+  width: 55%;
   padding: 10px;
 }
 
@@ -33,9 +33,46 @@
   clear: both;
 }
 
+.fruitlist {
+  display: flex;
+  flex-flow: row wrap;
+  width: 330px;
+}
+
 .fruit {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.fruit span {
+  float: right;
+}
+
+.fruit #btn-rem svg {
+  width: 22px;
+  height: 22px;
+}
+
+#btn-rem {
+	display: inline-block;
+	/* padding: 10px 14px; */
+	color: #FFF;
+	border: 1px solid #FFF;
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 120%;
+	background-color: rgba(255,255,255, 0);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-webkit-transition: background-color 300ms ease;
+	-moz-transition: background-color 300ms ease;
+	transition: background-color 300ms ease;
+	cursor: pointer;
+}
+#btn-rem:hover {
+	background-color: rgba(255,255,255, 0.3);
+	color: #FFF;
 }
 
 .description {
@@ -43,32 +80,31 @@
 }
 
 svg {
-  width: 150px;
-  height: 120px;
+  width: 160px;
+  height: 110px;
 }
 
-.fruitlist {
-  display: flex;
-  flex-flow: row wrap;
-  width: 400px;
-}
-
-/*         .cart {
-
-}
-*/
 .itemDetails {
   margin: 10px;
+  width: 230px;
 }
+
 
 .total {
   margin: 10px;
   float: left;
 }
 
+
+
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
 @media (max-width: 600px) {
-  .column .fruitlist {
+ 
+  .row {
+    display: block;
+  }
+  
+   .fruitlist {
     width: 100%;
   }
 }
