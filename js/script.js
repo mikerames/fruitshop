@@ -1,9 +1,12 @@
 // global variables
 const list = document.getElementById('fruitlist');
 const removeSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 22 22" style="enable-background:new 0 0 22 22;" xml:space="preserve"><g><g><path class="fill" d="M16.1,3.6h-1.9V3.3c0-1.3-1-2.3-2.3-2.3h-1.7C8.9,1,7.8,2,7.8,3.3v0.2H5.9c-1.3,0-2.3,1-2.3,2.3v1.3c0,0.5,0.4,0.9,0.9,1v10.5c0,1.3,1,2.3,2.3,2.3h8.5c1.3,0,2.3-1,2.3-2.3V8.2c0.5-0.1,0.9-0.5,0.9-1V5.9C18.4,4.6,17.4,3.6,16.1,3.6z M9.1,3.3c0-0.6,0.5-1.1,1.1-1.1h1.7c0.6,0,1.1,0.5,1.1,1.1v0.2H9.1V3.3z M16.3,18.7c0,0.6-0.5,1.1-1.1,1.1H6.7c-0.6,0-1.1-0.5-1.1-1.1V8.2h10.6V18.7z M17.2,7H4.8V5.9c0-0.6,0.5-1.1,1.1-1.1h10.2c0.6,0,1.1,0.5,1.1,1.1V7z"/></g><g><g><path class="fill" d="M11,18c-0.4,0-0.6-0.3-0.6-0.6v-6.8c0-0.4,0.3-0.6,0.6-0.6s0.6,0.3,0.6,0.6v6.8C11.6,17.7,11.4,18,11,18z"/></g><g><path class="fill" d="M8,18c-0.4,0-0.6-0.3-0.6-0.6v-6.8c0-0.4,0.3-0.6,0.6-0.6c0.4,0,0.6,0.3,0.6,0.6v6.8C8.7,17.7,8.4,18,8,18z"/></g><g><path class="fill" d="M14,18c-0.4,0-0.6-0.3-0.6-0.6v-6.8c0-0.4,0.3-0.6,0.6-0.6c0.4,0,0.6,0.3,0.6,0.6v6.8C14.6,17.7,14.3,18,14,18z"/></g></g></g></svg>';
+const plusSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455 455" style="enable-background:new 0 0 455 455;" xml:space="preserve"> <polygon points="455,212.5 242.5,212.5 242.5,0 212.5,0 212.5,212.5 0,212.5 0,242.5 212.5,242.5 212.5,455 242.5,455 242.5,242.5 455,242.5 "/></svg>';
+const minusSVG = '<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455 455" style="enable-background:new 0 0 455 455;" xml:space="preserve"> <rect y="212.5" width="455" height="30"/></svg>'
+
 let total = 0;
 let totalCost;
-let data = { 
+let data = {
     cart: []
 };
 
@@ -66,7 +69,7 @@ function addToCart(e) {
     // starts creating dom on cart with clicked fruit
     // it will create 5 sections per fruit on cart
     // plus the main one that includes all these 5 others 
-    
+
     // gets clicked fruit position in fruits array
     const fruitIdx = fruits.map(function (e) { return e.fruit; }).indexOf(fruit);
 
@@ -82,7 +85,7 @@ function addToCart(e) {
     var btnSpan = document.createElement('span')
     btnSpan.appendChild(btnRem);
     divFruit.appendChild(btnSpan);
-    
+
 
     /* const divDescription = document.createElement('div');
     divDescription.classList.add('description');
@@ -100,13 +103,13 @@ function addToCart(e) {
     /* var divLocation = document.createTextNode(fruits[fruitIdx].location);
      */
 
-     // quantity section 4
+    // quantity section 4
     const qty = document.createElement('div');
     qty.classList.add('quantity');
     const btnMinus = document.createElement('button');
     btnMinus.classList.add('btn-minus');
     btnMinus.setAttribute('id', 'btn-minus');
-    btnMinus.innerText = 'rem';
+    btnMinus.innerHTML = minusSVG;
     const qtyValue = document.createElement('input');
     qtyValue.setAttribute('id', 'inputqty' + fruits[fruitIdx].fruit);
     qtyValue.setAttribute('type', 'text');
@@ -115,7 +118,7 @@ function addToCart(e) {
     const btnPlus = document.createElement('button');
     btnPlus.classList.add('btn-plus');
     btnPlus.setAttribute('id', 'btn-plus');
-    btnPlus.innerText = 'add';
+    btnPlus.innerHTML = plusSVG;
 
     // price section 5
     const divPrice = document.createElement('div');
@@ -145,6 +148,11 @@ function addToCart(e) {
     cart.appendChild(itemDetails);
     // single break line
     document.createElement('hr');
+    // creates total section
+    divTotal = document.createElement('div');
+    divTotal.classList.add('total');
+    divTotal.setAttribute('id', 'total');
+    document.getElementById('two').appendChild(divTotal);
     // gets total id and updates it 
     totalCost = document.getElementById('total');
     total += parseInt(fruits[fruitIdx].price);
@@ -164,13 +172,13 @@ function btnQty(e) {
 
     // if btn clicked is remove, plus or minus
     let btnQty = e.target.id;
-
+    console.log(btnQty);
     let fruit;
     // if parentelement is itemDetails or 
     // fruit name tbu as reference for price
-    if(itemDetId.length > 11) {
+    if (itemDetId.length > 11) {
         fruit = itemDetId.substr(11);
-    } else { 
+    } else {
         fruit = e.target.parentElement.firstChild.id;
     }
 
@@ -182,7 +190,7 @@ function btnQty(e) {
 
     // gets unique identifier to the related fruit input qty
     let inputQty = document.getElementById('inputqty' + fruit);
-    
+
     // parses to integer the string value
     let inputQtyNum = parseInt(inputQty.value);
 
@@ -202,25 +210,26 @@ function btnQty(e) {
         let elem = document.getElementById(itemDetId);
         elem.parentNode.removeChild(elem);
         //remove from temp array to
-        data.cart.splice(data.cart.indexOf(fruit), 1);                
+        data.cart.splice(data.cart.indexOf(fruit), 1);
     }
 
     // always update current total with the previous cost
     total -= costBefore;
 
-    console.log(costBefore);
+    //when plus or minus    
+    if (btnQty !== 'btn-rem') {
+        // calculates the new cost having the new qty
+        cost = price * inputQty.value;
+        // updates total with new cost 
+        total = total += cost;
+    }
 
-    // calculates the new cost having the new qty
-    cost = price * inputQty.value;
-    
-    // updates total with new cost
-    total = total += cost;
-    
     // write the updated total
-    totalCost.innerText = 'Total: ' + total;
-
-    console.log(total);
-
+    if (total != 0) {
+        totalCost.innerText = 'Total: ' + total;
+    } else {
+        document.getElementById('two').removeChild(document.getElementById('total'));
+    }
 }
 
 
