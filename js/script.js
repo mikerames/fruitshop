@@ -148,11 +148,13 @@ function addToCart(e) {
     cart.appendChild(itemDetails);
     // single break line
     document.createElement('hr');
-    // creates total section
-    divTotal = document.createElement('div');
-    divTotal.classList.add('total');
-    divTotal.setAttribute('id', 'total');
-    document.getElementById('two').appendChild(divTotal);
+    // creates total section if not exists
+    if (document.getElementById('total') === null) {
+        divTotal = document.createElement('div');
+        divTotal.classList.add('total');
+        divTotal.setAttribute('id', 'total');
+        document.getElementById('two').appendChild(divTotal);
+    }
     // gets total id and updates it 
     totalCost = document.getElementById('total');
     total += parseInt(fruits[fruitIdx].price);
