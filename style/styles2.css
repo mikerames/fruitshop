@@ -1,0 +1,38 @@
+/* SCSS Variables */
+.main-window {
+  padding: 10px;
+}
+
+.main-window h1 {
+  text-align: center;
+}
+
+.main-window p {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-window span {
+  color: red;
+}
+
+.row {
+  display: flex;
+}
+
+.fruitList {
+  display: flex;
+  flex-flow: row wrap;
+  width: 330px;
+  height: 330px;
+  padding: 10px;
+}
+
+.fruitList img {
+  width: 50%;
+  height: 50%;
+}
+
+.fruitDiv {
+  margin: 0px 0px 30px 0px;
+}
