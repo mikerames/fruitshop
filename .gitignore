@@ -1,0 +1,13 @@
+*.log
+node_modules
+**/.DS_STORE
+eb/**
+
+*.sublime*
+
+# Ignore scripts.
+scripts
+
+.elasticbeanstalk
+
+package-lock.json
