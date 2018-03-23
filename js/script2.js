@@ -27,6 +27,12 @@ function ShoppingCart() {
       return _elements[_findProductIndex(fruit.id)].quantity;
     },
     addFruit: function(fruit, quantity) {
+      if(_findProductIndex(fruit.id) === -1) {
+        _elements.push({
+          product: fruit,
+          quantity: 0
+        });
+      }
       return (_elements[_findProductIndex(fruit.id)].quantity += quantity);
     },
     removeFruit: function(fruit, quantity) {
