@@ -1,0 +1,16 @@
+https://examples.javacodegeeks.com/core-java/writeread-excel-files-in-java-example/
+
+-get maximum value from array : 
+https://stackoverflow.com/questions/1484347/finding-the-max-min-value-in-an-array-of-primitives-using-java
+
+-batch file to run with params
+https://stackoverflow.com/questions/6306918/batch-file-to-run-jar-file-with-parameters
+
+no args: só pode aceitar um parametro...
+
+1- bean
+2- identificar max do array A
+3- criar novo array B c todos os outros elementos e multiplicar por 1,10
+4- eliminar todos elementos do array A excepto maximo
+4- somar todos valores dos dois arrays...
+
